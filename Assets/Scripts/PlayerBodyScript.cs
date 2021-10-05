@@ -25,7 +25,6 @@ public class PlayerBodyScript : MonoBehaviour
         }
         if (other.tag == "Finish")
         {
-            Destroy(other.gameObject.GetComponent<Collider>());
             playerController.OnFinishReached();
         }
     }

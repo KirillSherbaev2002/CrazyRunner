@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isSmoothTransitionNeeded)
+        if (isSmoothTransitionNeeded && !ChoiceCanvas.activeSelf)
         {
             if(smoothTransitionFrom > smoothTransitionTo)
             {
@@ -137,7 +137,6 @@ public class PlayerController : MonoBehaviour
             PayOption.SetActive(false);
         }
         SplineMovementIndicator.fillAmount = Vector3.Distance(SplineEnd.transform.position, splineFollower.transform.position) / allDistanceNeeded;
-        print(Vector3.Distance(SplineEnd.transform.position, splineFollower.transform.position) / allDistanceNeeded);
     }
 
     private void OnSmoothTransitionNeeded(bool isMoveToLeft)
